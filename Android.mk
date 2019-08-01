@@ -13,3 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+LOCAL_PATH := $(call my-dir)
+
+ifneq ($(filter whyred,$(TARGET_DEVICE)),)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
+include $(CLEAR_VARS)
+
+endif
