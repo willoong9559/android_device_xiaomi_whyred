@@ -120,7 +120,7 @@ PRODUCT_PACKAGES += \
 		libtinyxml \
 		memtrack.sdm660
 
-# FE
+# FM
 PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
