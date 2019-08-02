@@ -99,6 +99,17 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# Display
+		PRODUCT_PACKAGES += \
+		    copybit.sdm660 \
+		    gralloc.sdm660 \
+		    hwcomposer.sdm660 \
+		    libdisplayconfig \
+		    liboverlay \
+		    libqdMetaData.system \
+		    libtinyxml \
+				memtrack.sdm660
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
