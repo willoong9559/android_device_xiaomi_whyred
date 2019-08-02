@@ -133,5 +133,8 @@ TARGET_USES_MKE2FS := true
 
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+
 # Inherit from proprietary files
 -include vendor/xiaomi/whyred/BoardConfigVendor.mk
