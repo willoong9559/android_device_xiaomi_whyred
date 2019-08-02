@@ -136,5 +136,8 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
+# Sensor
+USE_SENSOR_MULTI_HAL := true
+
 # Inherit from proprietary files
 -include vendor/xiaomi/whyred/BoardConfigVendor.mk

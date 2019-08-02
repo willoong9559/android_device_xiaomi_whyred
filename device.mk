@@ -119,5 +119,13 @@ PRODUCT_COPY_FILES += \
 		frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
 		frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
+# Sensors
+		PRODUCT_COPY_FILES += \
+		    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
+		    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
+
+		PRODUCT_PACKAGES += \
+		    sensors.sdm660
+
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
