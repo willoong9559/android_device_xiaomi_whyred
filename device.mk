@@ -106,24 +106,29 @@ PRODUCT_COPY_FILES += \
 		BLUETOOTH_HCI_USE_MCT := true
 
 # Display
-		PRODUCT_PACKAGES += \
-		    copybit.sdm660 \
-		    gralloc.sdm660 \
-		    hwcomposer.sdm660 \
-		    libdisplayconfig \
-		    liboverlay \
-		    libqdMetaData.system \
-		    libtinyxml \
-				memtrack.sdm660
+PRODUCT_PACKAGES += \
+		copybit.sdm660 \
+		gralloc.sdm660 \
+		hwcomposer.sdm660 \
+		libdisplayconfig \
+		liboverlay \
+    libqdMetaData.system \
+		libtinyxml \
+		memtrack.sdm660
 
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
+		$(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl \
+    $(LOCAL_PATH)/configs/keylayout/sdm660-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sdm660-snd-card_Button_Jack.kl
 
 # IRQ
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+
+# IRSC
+PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Media
 PRODUCT_COPY_FILES += \
