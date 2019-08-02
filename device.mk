@@ -100,10 +100,10 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 # Bluetooth
-		BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-		BOARD_HAVE_BLUETOOTH := true
-		BOARD_HAVE_BLUETOOTH_QCOM := true
-		BLUETOOTH_HCI_USE_MCT := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BLUETOOTH_HCI_USE_MCT := true
 
 # Display
 PRODUCT_PACKAGES += \
@@ -142,33 +142,40 @@ PRODUCT_COPY_FILES += \
 		frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
 
 # OMX
-		PRODUCT_PACKAGES += \
-		    libc2dcolorconvert \
-		    libextmedia_jni \
-		    libOmxAacEnc \
-		    libOmxAmrEnc \
-		    libOmxCore \
-		    libOmxEvrcEnc \
-		    libOmxQcelp13Enc \
-		    libOmxVdec \
-		    libOmxVenc \
-		    libmm-omxcore \
-		    libOmxG711Enc \
-		    libstagefrighthw
+PRODUCT_PACKAGES += \
+		libc2dcolorconvert \
+		libextmedia_jni \
+		libOmxAacEnc \
+		libOmxAmrEnc \
+		libOmxCore \
+		libOmxEvrcEnc \
+		libOmxQcelp13Enc \
+		libOmxVdec \
+		libOmxVenc \
+		libmm-omxcore \
+		libOmxG711Enc \
+		libstagefrighthw
+
+# RIL
+PRODUCT_PACKAGES += \
+		android.hardware.radio.config@1.0 \
+		librmnetctl \
+		libxml2 \
+		libprotobuf-cpp-full
 
 # Seccomp policy
-				PRODUCT_COPY_FILES += \
-						$(LOCAL_PATH)/seccomp/configstore@1.1.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/configstore@1.1.policy \
-				    $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-				    $(LOCAL_PATH)/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/seccomp/configstore@1.1.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/configstore@1.1.policy \
+	  $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+		$(LOCAL_PATH)/seccomp/mediaextractor.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Sensors
-		PRODUCT_COPY_FILES += \
-		    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-		    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
+PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
+		$(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
-		PRODUCT_PACKAGES += \
-		    sensors.sdm660
+PRODUCT_PACKAGES += \
+		sensors.sdm660
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
