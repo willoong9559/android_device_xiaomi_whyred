@@ -37,6 +37,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a73
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Android_filesystem_config
+PRODUCT_PACKAGES += \
+	fs_config_files
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
