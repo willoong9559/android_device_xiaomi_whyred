@@ -157,6 +157,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.health@2.0-service
 
+# HIDL
+PRODUCT_PACKAGES += \
+	android.hidl.base@1.0
+
 # Input
 PRODUCT_COPY_FILES += \
   $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
