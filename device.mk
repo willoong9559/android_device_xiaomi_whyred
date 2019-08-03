@@ -333,6 +333,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
 	telephony-ext
 
+# Touchscreen
+PRODUCT_PACKAGES += \
+	libtinyxml2
+
 # VNDK
 PRODUCT_PACKAGES += \
 	libdng_sdk.vendor_32 \
