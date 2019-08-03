@@ -18,6 +18,10 @@
 BOARD_VENDOR := xiaomi
 DEVICE_PATH := device/xiaomi/whyred
 
+# Platform
+TARGET_BOARD_PLATFORM := sdm660
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno509
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -33,31 +37,8 @@ TARGET_2ND_CPU_VARIANT := cortex-a73
 
 TARGET_USES_64_BIT_BINDER := true
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sdm660
-TARGET_NO_BOOTLOADER := true
-
-# CPUSets
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-
-# Kernel
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET := 0x01000000
-TARGET_KERNEL_ARCH := arm64
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-  TARGET_KERNEL_CLANG_COMPILE := true
-  TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-  TARGET_KERNEL_SOURCE := kernel/xiaomi/whyred
-endif
-
-# Platform
-TARGET_BOARD_PLATFORM := sdm660
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno509
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -114,11 +95,19 @@ AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := sdm660
+TARGET_NO_BOOTLOADER := true
+
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
+
+# CPUSets
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
 
 # Charger Mode
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -159,6 +148,20 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+
+# Kernel
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA84000 androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 swiotlb=2048 androidboot.configfs=true firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET := 0x01000000
+TARGET_KERNEL_ARCH := arm64
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+  TARGET_KERNEL_CLANG_COMPILE := true
+  TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+  TARGET_KERNEL_SOURCE := kernel/xiaomi/whyred
+endif
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -207,6 +210,3 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 HOSTAPD_VERSION := VER_0_8_X
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-# Inherit from proprietary files
--include vendor/xiaomi/whyred/BoardConfigVendor.mk
