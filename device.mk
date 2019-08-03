@@ -100,6 +100,13 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+	android.hardware.graphics.allocator@2.0-impl:64 \
+	android.hardware.graphics.allocator@2.0-service \
+	android.hardware.graphics.composer@2.1-impl:64 \
+	android.hardware.graphics.composer@2.1-service \
+	android.hardware.graphics.mapper@2.0-impl \
+	android.hardware.memtrack@1.0-impl \
+	android.hardware.memtrack@1.0-service \
 	copybit.sdm660 \
 	gralloc.sdm660 \
 	hwcomposer.sdm660 \
@@ -107,8 +114,14 @@ PRODUCT_PACKAGES += \
 	liboverlay \
 	libqdMetaData.system \
 	libtinyxml \
-	memtrack.sdm660
+	memtrack.sdm660 \
+	libgpu_tonemapper \
+	libsdm_core
 
+PRODUCT_PACKAGES += \
+	android.hardware.configstore@1.0-service \
+	android.hardware.broadcastradio@1.0-impl
+	
 # FM
 PRODUCT_PACKAGES += \
   FM2 \
