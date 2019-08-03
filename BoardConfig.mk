@@ -15,10 +15,10 @@
 #
 
 # Board device path
-BOARD_VENDOR := xiaomi
 DEVICE_PATH := device/xiaomi/whyred
 
 # Platform
+BOARD_VENDOR := xiaomi
 TARGET_BOARD_PLATFORM := sdm660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno509
 
