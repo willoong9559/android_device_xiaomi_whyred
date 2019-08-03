@@ -189,6 +189,9 @@ PRODUCT_PACKAGES += \
 		libxml2 \
 		libprotobuf-cpp-full
 
+# Seccomp Policy
+BOARD_SECCOMP_POLICY := $(PLATFORM_PATH)/seccomp
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
 		$(LOCAL_PATH)/seccomp/configstore@1.1.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/configstore@1.1.policy \
