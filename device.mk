@@ -297,6 +297,10 @@ PRODUCT_PACKAGES += \
 	rcs_service_api \
 	rcs_service_api.xml
 
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+	android.hardware.renderscript@1.0-impl
+
 # RIL
 PRODUCT_PACKAGES += \
 	android.hardware.radio.config@1.0 \
@@ -339,7 +343,7 @@ PRODUCT_COPY_FILES += \
 	prebuilts/vndk/v27/arm/arch-arm-armv7-a-neon/shared/vndk-core/android.frameworks.sensorservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.frameworks.sensorservice@1.0-v27.so \
 	prebuilts/vndk/v27/arm64/arch-arm64-armv8-a/shared/vndk-core/android.frameworks.sensorservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.frameworks.sensorservice@1.0-v27.so
 
-	# Wifi
+# Wifi
 PRODUCT_PACKAGES += \
 	android.hardware.wifi@1.0-service \
 	hostapd \
