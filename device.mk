@@ -222,6 +222,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	  $(PLATFORM_PATH)/power-libperfmgr/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+# QMI
+PRODUCT_PACKAGES += \
+	  libjson
+
 # RIL
 PRODUCT_PACKAGES += \
 		android.hardware.radio.config@1.0 \
