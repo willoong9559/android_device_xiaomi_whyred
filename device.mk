@@ -148,6 +148,10 @@ PRODUCT_PACKAGES += \
 	libcurl \
 	libgnsspps
 
+# Health
+PRODUCT_PACKAGES += \
+	android.hardware.health@2.0-service
+
 # Input
 PRODUCT_COPY_FILES += \
   $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
