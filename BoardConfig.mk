@@ -196,15 +196,15 @@ TARGET_USES_MKE2FS := true
 
 TARGET_COPY_OUT_VENDOR := vendor
 
-# RIL
-PROTOBUF_SUPPORTED := true
-TARGET_RIL_VARIANT := caf
-
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+
+# RIL
+PROTOBUF_SUPPORTED := true
+TARGET_RIL_VARIANT := caf
 
 # Sensor
 USE_SENSOR_MULTI_HAL := true
