@@ -150,6 +150,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
+# GPS
+PRODUCT_PACKAGES += \
+	gps.sdm660 \
+	libcurl \
+	libgnsspps
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
@@ -160,7 +166,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 		ebtables \
 		ethertypes
-
 
 # IRQ
 PRODUCT_COPY_FILES += \
