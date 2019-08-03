@@ -142,6 +142,14 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+# Fingerprint feature
+PRODUCT_PACKAGES += \
+	fingerprintd \
+	android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
+
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
