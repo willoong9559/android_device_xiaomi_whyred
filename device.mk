@@ -270,6 +270,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	sensors.sdm660
 
+# Telephony
+PRODUCT_PACKAGES += \
+	telephony-ext
+
+PRODUCT_BOOT_JARS += \
+	telephony-ext
+
 # VNDK
 PRODUCT_PACKAGES += \
 	libdng_sdk.vendor_32 \
