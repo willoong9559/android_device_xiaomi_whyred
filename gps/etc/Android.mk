@@ -9,4 +9,3 @@ LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR)/etc/
 LOCAL_SRC_FILES := gps.conf
 
 include $(BUILD_PREBUILT)
-
