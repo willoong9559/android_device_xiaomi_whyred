@@ -205,6 +205,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
