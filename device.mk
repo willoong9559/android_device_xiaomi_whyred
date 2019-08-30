@@ -325,6 +325,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.renderscript@1.0-impl
 
+# Recovery
+PRODUCT_PACKAGES += \
+	librecovery_updater_whyred
+
 # RIL
 PRODUCT_PACKAGES += \
 	android.hardware.radio.config@1.0 \

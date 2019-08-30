@@ -44,6 +44,10 @@ PRODUCT_PACKAGES += \
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
+# Assert
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+TARGET_OTA_ASSERT_DEVICE := whyred
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_SRS_TRUEMEDIA := false
@@ -211,6 +215,10 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+
+# Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_whyred
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # RIL
 PROTOBUF_SUPPORTED := true
