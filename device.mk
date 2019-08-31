@@ -212,6 +212,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.light@2.0-service.xiaomi_sdm660
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+	vendor.livedisplay.livedisplay@2.0-service-sdm
+
 # Media and whiteliste
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -361,13 +365,27 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
 	telephony-ext
 
+# Thermal
+PRODUCT_PACKAGES += \
+	android.hardware.thermal@1.0-impl \
+	android.hardware.thermal@1.0-service \
+	thermal.sdm660
+
 # Touchscreen
 PRODUCT_PACKAGES += \
 	libtinyxml2
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+	vendor.lineage.trust@1.0-service
+
+# USB
+PRODUCT_PACKAGES += \
+	android.hardware.usb@1.0-service.basic
+
 # VNDK
 PRODUCT_PACKAGES += \
-    vndk-sp
+  vndk-sp
 
 # Wifi
 PRODUCT_PACKAGES += \
