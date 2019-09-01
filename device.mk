@@ -91,7 +91,7 @@ PRODUCT_PACKAGES += \
 	android.hardware.camera.provider@2.4-service \
 	camera.device@3.2-impl \
 	libxml2 \
-	Snap \
+	Snap
 
 # CNE
 PRODUCT_PACKAGES += \
