@@ -214,7 +214,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-	vendor.livedisplay.livedisplay@2.0-service-sdm
+	vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media and whiteliste
 PRODUCT_COPY_FILES += \
